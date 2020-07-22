@@ -8,7 +8,7 @@ import { from } from 'rxjs';
 
 @Injectable()
 export class AuthService {
-  public user: User;
+  // public user: User;
   constructor(public afAuth: AngularFireAuth) { }
 
   // tslint:disable-next-line: typedef
@@ -38,8 +38,8 @@ export class AuthService {
       console.log(error);
     }
   }
-  getCurrentUser(){
-    return  this.afAuth.authState.pipe(first()).toPromise();
-  }
+  // getCurrentUser(){
+  //   return  this.afAuth.authState.pipe(first()).toPromise();
+  // }
 
 }

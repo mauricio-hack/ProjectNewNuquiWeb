@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/sercives/auth.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -10,16 +11,11 @@ import { Router } from '@angular/router';
   providers: [AuthService]
 })
 export class NavbarComponent implements OnInit {
-  public isLogged = false;
-  public user: any;
+  public user$: Observable <any> = this.authSrv.afAuth.user;
   constructor(private authSrv: AuthService, private router: Router) { }
 
  // tslint:disable-next-line: typedef
- async ngOnInit() {
-    this.user = await this.authSrv.getCurrentUser();
-    if (this.user){
-      this.isLogged = true;
-    }
+  ngOnInit() {
   }
 
  async onLogout(){
