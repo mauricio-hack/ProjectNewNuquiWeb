@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/sercives/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,19 +12,24 @@ import { AuthService } from '../../auth/sercives/auth.service';
 export class NavbarComponent implements OnInit {
   public isLogged = false;
   public user: any;
-  constructor(private authSrv: AuthService) { }
+  constructor(private authSrv: AuthService, private router: Router) { }
 
  // tslint:disable-next-line: typedef
  async ngOnInit() {
-    console.log('Navbar');
     this.user = await this.authSrv.getCurrentUser();
     if (this.user){
       this.isLogged = true;
     }
   }
 
-  onLogout(){
-    this.authSrv.logout();
+ async onLogout(){
+    try{
+     await this.authSrv.logout();
+     this.router.navigate(['/login']);
+    }catch (error){
+      console.log(error);
+    }
+   
   }
 
 }
