@@ -1,0 +1,38 @@
+<section class="testimonial py-5" id="testimonial">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-4 py-5 bg-primary text-white text-center ">
+                <div class=" ">
+                    <div class="card-body">
+                        <img src="http://www.ansonika.com/mavia/img/registration_bg.svg" style="width:30%">
+                        <h2 class="py-3">Registrate</h2>
+                        <p>Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu, facete detracto patrioque an per, lucilius pertinacia eu vel.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 py-5 border">
+                <h4 class="pb-4">Por favor complete con sus datos</h4>
+                <form [formGroup]="registerForms" (ngSubmit)="onRegister()">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="">Email</label>
+                          <input id="Full Name" name="Full Name" placeholder="Ingrese Email" class="form-control" type="email" formControlName="email">
+                        </div>
+                      </div> 
+                      <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="">password</label>
+                          <input type="password" class="form-control" id="inputEmail4" placeholder="Ingrese una contraseña" formControlName="password">
+                        </div>
+                      </div> 
+                    <div class="form-row">
+                        <button type="submit" class="btn btn-danger" (click)="onRegister()">Submit</button>
+                    </div>
+                </form>
+                <div class="form-group mt-5">
+                    <p>ya tiene una cuenta NuquiWeb ingresar/ <a routerLink="/login">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
