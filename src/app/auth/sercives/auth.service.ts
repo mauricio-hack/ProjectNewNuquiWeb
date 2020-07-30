@@ -30,6 +30,7 @@ export class AuthService {
       console.log(error);
     }
   }
+ // tslint:disable-next-line: typedef
  async  logout(){
 
     try{
