@@ -12,6 +12,11 @@ export class AuthService {
   constructor(public afAuth: AngularFireAuth) { }
 
   // tslint:disable-next-line: typedef
+  async sendVerificationEmail(): Promise<void>{
+    return (await this.afAuth.auth.currentUser).sendEmailVerification();
+  }
+
+  // tslint:disable-next-line: typedef
   async login(email: string, password: string){
     try{
       const result = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
@@ -25,6 +30,7 @@ export class AuthService {
   async register(email: string, password: string){
     try{
       const resul = await this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+      this.sendVerificationEmail();
       return resul;
     }catch (error){
       console.log(error);
