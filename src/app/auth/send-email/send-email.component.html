@@ -1,0 +1,25 @@
+<div class="container mt-5" *ngIf="User$ | async as user; else loading">
+    <div class="card">
+        <div class="card-body">
+            <!-- {{User$ | async | json}} -->
+            <h3 class="text-center card-title">
+                 Gracias por registrarte
+            </h3>
+            <div class="form-group">
+                <p class="text-center">
+                    confirmar email <strong>{{user.email}} </strong>
+                </p>
+                <p class="text-center">
+                    por favor confirmar tu email
+                </p>
+            </div>
+            <div class="form-group text-center">
+                <button class="btn btn-danger" (click)="onSendEmail()">reenviar email</button>
+            </div>
+        </div>
+        </div>
+</div>
+
+<ng-template #loading>
+    loading...
+</ng-template>
