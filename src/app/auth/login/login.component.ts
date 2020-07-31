@@ -20,13 +20,18 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line: typedef
   async onLogin(){
     const {email, password} = this.loginForm.value;
     try{
     const user = await  this.authsvc.login(email, password);
-    if (user){
+    if (user && user.user.emailVerified){
      this.router.navigate(['/home']);
-//redirec
+// redirec
+    }else if (user){
+      this.router.navigate(['/verfication-email']);
+    }else{
+      this.router.navigate(['/register']);
     }
     }catch (error){
       console.log(error);
