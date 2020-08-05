@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 import { SendEmailComponent } from './auth/send-email/send-email.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { PortafolioServiceComponent } from './pages/portafolio-service/portafolio-service.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     NavbarComponent,
     SendEmailComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PortafolioServiceComponent
   ],
   imports: [
     BrowserModule,
