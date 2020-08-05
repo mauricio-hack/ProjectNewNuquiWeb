@@ -13,6 +13,7 @@ import { SendEmailComponent } from './auth/send-email/send-email.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { PortafolioServiceComponent } from './pages/portafolio-service/portafolio-service.component';
+import { AbautComponent } from './pages/abaut/abaut.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { PortafolioServiceComponent } from './pages/portafolio-service/portafoli
     SendEmailComponent,
     HeaderComponent,
     FooterComponent,
-    PortafolioServiceComponent
+    PortafolioServiceComponent,
+    AbautComponent
   ],
   imports: [
     BrowserModule,

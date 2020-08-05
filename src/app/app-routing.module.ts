@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SendEmailComponent } from './auth/send-email/send-email.component';
 import { PortafolioServiceComponent } from './pages/portafolio-service/portafolio-service.component';
+import { AbautComponent } from './pages/abaut/abaut.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'verification-email', component: SendEmailComponent,
   },
+  {
+    path: 'abaut', component: AbautComponent
+  },
+
   {
     path: 'portafolio-service', component: PortafolioServiceComponent,
   },
