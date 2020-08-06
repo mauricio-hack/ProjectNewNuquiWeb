@@ -52,9 +52,9 @@
       <h1 class="rk-logo"><a href="index.html">NuquiWeb<sup>app</sup></a></h1>
       <nav class="rk-navigation">
         <ul class="rk-menu" *ngIf="user$ | async as user;else login">
-          <li class="rk-menu__item"><a  routerLink="/home" class="rk-menu__link">Home</a>
+          <li class="rk-menu__item"><a  routerLink="/portafolio-service" class="rk-menu__link">Service</a>
           </li>
-          <li class="active rk-menu__item"><a  routerLink="/home" class="rk-menu__link">Portfolio</a>
+          <li class="active rk-menu__item"><a  routerLink="/abaut" class="rk-menu__link">abaut</a>
           </li>
           <!-- <li class="rk-menu__item"><a href="blog.html" class="rk-menu__link">Blog</a>
           </li>
@@ -67,11 +67,11 @@
               </ul>
             </nav>
           </li> -->
-          <li class="rk-menu__item"><a  routerLink="/home">Contact Us</a>
+          <li class="rk-menu__item"><a  routerLink="/contact">Contact Us</a>
           </li>
-          <li class="rk-menu__item"><a   routerLink="/home" class="rk-menu__link">{{user?.email}}</a>
+          <li class="rk-menu__item"><a   routerLink="/portafolio-service" class="rk-menu__link">{{user?.email}}</a>
           </li>
-          <li class="rk-menu__item"><a  routerLink="/home"  class="rk-menu__link" (click)="onLogout()">LogOut</a>
+          <li class="rk-menu__item"><a routerLink="#" class="rk-menu__link" (click)="onLogout()">LogOut</a>
           </li>
         </ul>
         <!-- <form class="rk-search">
