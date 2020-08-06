@@ -8,10 +8,6 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { LoginComponent } from './auth/login/login.component';
 
 const routes: Routes = [
-  {
-    path: '',  component: PortafolioServiceComponent
-  
-  },
   // {
   //   path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   // },
@@ -20,6 +16,8 @@ const routes: Routes = [
   },
   {
      path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule)
+  },
+  { path: 'forgot-password', loadChildren: () => import('./auth/forgot-password/forgot-password.module').then(m => m.ForgotPasswordModule) 
   },
   {
     path: 'verification-email', component: SendEmailComponent,
@@ -39,7 +37,6 @@ const routes: Routes = [
   {
     path: 'portafolio-service', component: PortafolioServiceComponent,
   },
-  { path: 'forgot-password', loadChildren: () => import('./auth/forgot-password/forgot-password.module').then(m => m.ForgotPasswordModule) }
 ];
 
 @NgModule({
