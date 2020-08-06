@@ -16,6 +16,8 @@ import { PortafolioServiceComponent } from './pages/portafolio-service/portafoli
 import { AbautComponent } from './pages/abaut/abaut.component';
 import { ItemComponent } from './pages/item/item.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { InfoPageService } from './services/info-page.service';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,10 +35,13 @@ import { ContactComponent } from './pages/contact/contact.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [
+    InfoPageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -49,7 +49,7 @@
       </svg>
     </label>
     <div class="ae-container-fluid rk-topbar">
-      <h1 class="rk-logo"><a href="index.html">NuquiWeb<sup>app</sup></a></h1>
+      <h1 class="rk-logo"><a href="index.html">{{_infoPageService.info.titulo}} <sup>app</sup></a></h1>
       <nav class="rk-navigation">
         <ul class="rk-menu" *ngIf="user$ | async as user;else login">
           <li class="rk-menu__item"><a  routerLink="/portafolio-service" class="rk-menu__link">Service</a>
