@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormControlDirective } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from '../sercives/auth.service';
 import { Router } from '@angular/router';
 
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     try{
     const user = await  this.authsvc.login(email, password);
     if (user && user.user.emailVerified){
-     this.router.navigate(['/home']);
+     this.router.navigate(['/portafolio-service']);
 // redirec
     }else if (user){
       this.router.navigate(['/verfication-email']);
