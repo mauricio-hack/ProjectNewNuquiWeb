@@ -31,9 +31,9 @@ const routes: Routes = [
   {
     path: 'contact', component: ContactComponent
   },
-  // {
-  //   path: '**', redirectTo : 'login', pathMatch: 'full'
-  // },
+  {
+     path: '', redirectTo : 'login', pathMatch: 'full'
+   },
   {
     path: 'portafolio-service', component: PortafolioServiceComponent,
   },
