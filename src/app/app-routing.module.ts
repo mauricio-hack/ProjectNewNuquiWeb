@@ -17,7 +17,7 @@ const routes: Routes = [
   {
      path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule)
   },
-  { path: 'forgot-password', loadChildren: () => import('./auth/forgot-password/forgot-password.module').then(m => m.ForgotPasswordModule) 
+  { path: 'forgot-password', loadChildren: () => import('./auth/forgot-password/forgot-password.module').then(m => m.ForgotPasswordModule)
   },
   {
     path: 'verification-email', component: SendEmailComponent,
@@ -31,9 +31,9 @@ const routes: Routes = [
   {
     path: 'contact', component: ContactComponent
   },
-  {
-    path: '**', redirectTo : 'portafolio-service', pathMatch: 'full'
-  },
+  // {
+  //   path: '**', redirectTo : 'login', pathMatch: 'full'
+  // },
   {
     path: 'portafolio-service', component: PortafolioServiceComponent,
   },
