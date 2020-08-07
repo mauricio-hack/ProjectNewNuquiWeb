@@ -18,6 +18,8 @@ import { ItemComponent } from './pages/item/item.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { InfoPageService } from './services/info-page.service';
 import {HttpClientModule} from '@angular/common/http';
+import { ProductosService } from './services/productos.service';
+import { AbautService } from './services/abaut.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,9 @@ import {HttpClientModule} from '@angular/common/http';
     AngularFireAuthModule
   ],
   providers: [
-    InfoPageService
+    InfoPageService,
+    ProductosService,
+    AbautService
   ],
   bootstrap: [AppComponent]
 })

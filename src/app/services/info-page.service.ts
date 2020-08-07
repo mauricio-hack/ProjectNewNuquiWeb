@@ -11,12 +11,15 @@ export class InfoPageService {
   cargada = false;
 
   constructor(private _HttpClient: HttpClient) {
-    // console.log('service info page');
-    this._HttpClient.get('assets/data/data-page.json').subscribe((resp: InfoPage) => {
-      this.cargada = true;
-      this.info = resp;
-     console.log(resp);
-});
-
+    this.cargarInfo();
   }
+
+private cargarInfo(){
+  this._HttpClient.get('assets/data/data-page.json').subscribe((resp: InfoPage) => {
+    this.cargada = true;
+    this.info = resp;
+});
+}
+
+
 }
