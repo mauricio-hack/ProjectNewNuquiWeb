@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoPageService } from '../../services/info-page.service';
+import { AbautService } from '../../services/abaut.service';
 
 @Component({
   selector: 'app-abaut',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AbautComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _abautService: AbautService ) { }
 
   ngOnInit(): void {
   }
