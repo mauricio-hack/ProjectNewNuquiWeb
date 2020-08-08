@@ -15,9 +15,13 @@ export class ProductosService {
 
   private  cargarProducto(){
     this._HttpClient.get('https://nuquicore.firebaseio.com/productos_idx.json').subscribe((resp: productoInterface[]) => {
-    console.log(resp);
     this.productos = resp;
     this.cargando = false;
     });
   }
+
+    public getProducto(id:string){
+
+      return  this._HttpClient.get(`https://nuquicore.firebaseio.com/productos/${id}.json` )
+    }
 }
