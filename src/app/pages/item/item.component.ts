@@ -9,17 +9,19 @@ import { ProductoDetalleInterface } from '../../interfaces/producto-detalle.inte
 })
 export class ItemComponent implements OnInit {
 
+  public productoID: ProductoDetalleInterface;
+    id:string;
+
   constructor(public _router: Router, private _ActivatedRoute: ActivatedRoute , public _productoService: ProductosService ) { }
 
   ngOnInit(): void {
 
-  this._ActivatedRoute.params.subscribe((resp => {
-    console.log(resp.id);
-
-    this._productoService.getProducto(resp.id).subscribe((producto: ProductoDetalleInterface[]) => {
-      console.log(producto);
+    this._ActivatedRoute.params.subscribe((resp => {
+    this._productoService.getProducto(resp.id)
+    .subscribe((producto: ProductoDetalleInterface) => {
+    this.id = resp.id;
+    this.productoID = producto;
     });
   }));
   }
-
 }
