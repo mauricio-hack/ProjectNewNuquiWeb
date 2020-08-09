@@ -20,6 +20,8 @@ import { InfoPageService } from './services/info-page.service';
 import {HttpClientModule} from '@angular/common/http';
 import { ProductosService } from './services/productos.service';
 import { AbautService } from './services/abaut.service';
+import { ReservasComponent } from './shared/reservas/reservas.component';
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,8 @@ import { AbautService } from './services/abaut.service';
     PortafolioServiceComponent,
     AbautComponent,
     ItemComponent,
-    ContactComponent
+    ContactComponent,
+    ReservasComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { AbautService } from './services/abaut.service';
     ReactiveFormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule
   ],
   providers: [
     InfoPageService,

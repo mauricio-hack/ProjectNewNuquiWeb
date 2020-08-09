@@ -13,6 +13,7 @@ export class ProductosService {
     this.cargarProducto();
   }
 
+  // tslint:disable-next-line: typedef
   private  cargarProducto(){
     this._HttpClient.get('https://nuquicore.firebaseio.com/productos_idx.json').subscribe((resp: productoInterface[]) => {
     this.productos = resp;
@@ -20,7 +21,8 @@ export class ProductosService {
     });
   }
 
-    public getProducto(id:string){
+    // tslint:disable-next-line: typedef
+    public getProducto(id: string){
       return  this._HttpClient.get(`https://nuquicore.firebaseio.com/productos/${id}.json` );
     }
 }
