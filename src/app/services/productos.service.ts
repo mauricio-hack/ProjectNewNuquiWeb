@@ -21,7 +21,6 @@ export class ProductosService {
   }
 
     public getProducto(id:string){
-
       return  this._HttpClient.get(`https://nuquicore.firebaseio.com/productos/${id}.json` );
     }
 }
