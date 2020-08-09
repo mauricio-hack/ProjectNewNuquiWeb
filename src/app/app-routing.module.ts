@@ -26,7 +26,7 @@ const routes: Routes = [
     path: 'abaut', component: AbautComponent
   },
   {
-    path: 'item', component: ItemComponent
+    path: 'item/:id', component: ItemComponent
   },
   {
     path: 'contact', component: ContactComponent
