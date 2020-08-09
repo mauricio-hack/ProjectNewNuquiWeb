@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="\">NuquiWebApp</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -33,4 +33,63 @@
       </ul>
       </ng-template>
     </div>
-  </nav>
+  </nav> -->
+
+  <header class="ae-container-fluid ae-container-fluid--full rk-header ">
+    <input type="checkbox" id="mobile-menu" class="rk-mobile-menu">
+    <label for="mobile-menu">
+      <svg>
+        <use xlink:href="assets/img/symbols.svg#bar"></use>
+      </svg>
+      <svg>
+        <use xlink:href="assets/img/symbols.svg#bar"></use>
+      </svg>
+      <svg>
+        <use xlink:href="assets/img/symbols.svg#bar"></use>
+      </svg>
+    </label>
+    <div class="ae-container-fluid rk-topbar">
+      <h1 class="rk-logo"><a href="index.html">{{_infoPageService.info.titulo}} <sup>app</sup></a></h1>
+      <nav class="rk-navigation">
+        <ul class="rk-menu" *ngIf="user$ | async as user;else login">
+          <li class="rk-menu__item"><a  routerLink="/portafolio-service" class="rk-menu__link">Service</a>
+          </li>
+          <li class="active rk-menu__item"><a  routerLink="/abaut" class="rk-menu__link">abaut</a>
+          </li>
+          <!-- <li class="rk-menu__item"><a href="blog.html" class="rk-menu__link">Blog</a>
+          </li>
+          <li class="rk-menu__item"><a href="#0" class="rk-menu__link">Pages</a>
+            <nav class="rk-menu__sub">
+              <ul class="rk-container">
+                <li class="rk-menu__item"><a href="about.html" class="rk-menu__link">About</a></li>
+                <li class="rk-menu__item"><a href="documentation.html" class="rk-menu__link">Documentation</a></li>
+                <li class="rk-menu__item"><a href="design-styles.html" class="rk-menu__link">Design Styles</a></li>
+              </ul>
+            </nav>
+          </li> -->
+          <li class="rk-menu__item"><a  routerLink="/contact">Contact Us</a>
+          </li>
+          <li class="rk-menu__item"><a   routerLink="/portafolio-service" class="rk-menu__link">{{user?.email}}</a>
+          </li>
+          <li class="rk-menu__item"><a routerLink="#" class="rk-menu__link" (click)="onLogout()">LogOut</a>
+          </li>
+        </ul>
+        <!-- <form class="rk-search">
+          <input type="text" placeholder="Search" id="urku-search" class="rk-search-field">
+          <label for="urku-search">
+            <svg>
+              <use xlink:href="assets/img/symbols.svg#icon-search"></use>
+            </svg>
+          </label>
+        </form> -->
+        <ng-template #login>
+          <ul class="rk-menu">
+            <li class="rk-menu__item"><a routerLink="/login" class="rk-menu__link">Login</a>
+            </li>
+            <li class="active rk-menu__item"><a routerLink="/register" class="rk-menu__link">Register</a>
+            </li>
+          </ul>
+        </ng-template>
+      </nav>
+    </div>
+  </header>
