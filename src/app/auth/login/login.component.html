@@ -3,13 +3,14 @@
     <div class="row d-flex">
         <div class="col-lg-6">
             <div class="card1 pb-5">
-                <div class="row"> <img src="https://i.imgur.com/CXQmsmF.png" class="logo"> </div>
-                <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="https://i.imgur.com/uNGdWHi.png" class="image"> </div>
+                <!-- <div class="row"> <img src="https://i.imgur.com/CXQmsmF.png" class="logo">
+                 </div> -->
+                <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="assets/img/img-login.jpg.jpeg" class="image"> </div>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="card2 card border-0 px-4 py-5">
-                <div class="row mb-4 px-3">
+                <!-- <div class="row mb-4 px-3">
                     <h6 class="mb-0 mr-4 mt-2">Iniciar sesion Nuquí Web</h6>
                     <div class="facebook text-center mr-3">
                         <div class="fab fa-facebook-f"></div>
@@ -20,9 +21,9 @@
                     <div class="linkedin text-center mr-3">
                         <div class="fa fa-linkedin"></div>
                     </div>
-                </div>
+                </div> -->
                 <div class="row px-3 mb-4">
-                    <div class="line"></div> <small class="or text-center">iniciar</small>
+                    <div class="line"></div> <small class="or text-center">INICIAR SESION</small>
                     <div class="line"></div>
                 </div>
                 <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
@@ -47,7 +48,7 @@
                      </div>
                 </form>
                 <div class="row mb-4 px-3">
-                     <small class="font-weight-bold">No tienes cuaenta? <a class="text-danger " routerLink="/register">Registrate</a></small>
+                     <small class="font-weight-bold">No tienes cuaenta?<a class="text-danger " routerLink="/register">Registrate</a></small>
                  </div>
                  <div class="row mb-4 px-3">
                     <small class="font-weight-bold">Olvidaste tu contraseña? <a class="text-danger " [routerLink]="['/forgot-password']">Recuperar contraseña</a></small>
