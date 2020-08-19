@@ -8,7 +8,7 @@
                 <div class="col-sm-12">
                     <div class="form-group">
                         <label for="">Servicio</label>
-                        <input type="text" class="form-control" formControlName="servicio" placeholder="{{productoID.producto}} " readonly >
+                        <input type="text" class="form-control" formControlName="servicio"  [(ngModel)]="productoID.producto" readonly >
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <button class="btn btn-primary">Reservar</button>
+                <button class="btn btn-primary" (click)="reservar()">Reservar</button>
             </div>
         </form>
     </div>

@@ -19,6 +19,8 @@ export class ReservasComponent implements OnInit {
      private _FormBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+
+    
     this.fomulario_reserva = this._FormBuilder.group({
       servicio: [ '', Validators.required],
       nombre: ['', Validators.required],
@@ -36,6 +38,10 @@ export class ReservasComponent implements OnInit {
         this.productoID = producto;
       });
     });
+  }
+
+  reservar(){
+   console.log(this.fomulario_reserva.value);
   }
 
 }
