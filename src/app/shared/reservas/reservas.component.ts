@@ -3,6 +3,10 @@ import { ProductosService } from '../../services/productos.service';
 import { ProductoDetalleInterface } from 'src/app/interfaces/producto-detalle.interface';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AngularFirestore } from '@angular/fire/firestore';
+
+
+
 @Component({
   selector: 'app-reservas',
   templateUrl: './reservas.component.html',
@@ -15,8 +19,10 @@ export class ReservasComponent implements OnInit {
   id: string;
   constructor(public _productosService: ProductosService,
     public _router: Router,
-     private _ActivatedRoute: ActivatedRoute,
-     private _FormBuilder: FormBuilder) { }
+    private _ActivatedRoute: ActivatedRoute,
+     private _FormBuilder: FormBuilder,
+      private db: AngularFirestore,
+ ) { }
 
   ngOnInit(): void {
 
@@ -42,6 +48,9 @@ export class ReservasComponent implements OnInit {
 
   reservar(){
    console.log(this.fomulario_reserva.value);
+    this.db.collection('reservas').add(this.fomulario_reserva.value).then((termino)=>{
+    console.log('registro creado');
+   });
   }
 
 }
