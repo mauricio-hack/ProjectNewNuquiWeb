@@ -16,7 +16,6 @@ export class AbautService {
   public cargarEquipo(){
     this._HttpClient.get('https://nuquicore.firebaseio.com/equipo.json').subscribe((resp: abautInterface[]) => {
       this.equipo = resp;
-       console.log(resp);
     });
   }
 }

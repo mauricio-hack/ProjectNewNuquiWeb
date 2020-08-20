@@ -8,6 +8,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from 'src/environments/environment';
 import { SendEmailComponent } from './auth/send-email/send-email.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -20,6 +21,8 @@ import { InfoPageService } from './services/info-page.service';
 import {HttpClientModule} from '@angular/common/http';
 import { ProductosService } from './services/productos.service';
 import { AbautService } from './services/abaut.service';
+import { ReservasComponent } from './shared/reservas/reservas.component';
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,8 @@ import { AbautService } from './services/abaut.service';
     PortafolioServiceComponent,
     AbautComponent,
     ItemComponent,
-    ContactComponent
+    ContactComponent,
+    ReservasComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,9 @@ import { AbautService } from './services/abaut.service';
     ReactiveFormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    FormsModule
   ],
   providers: [
     InfoPageService,
